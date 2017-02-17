@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <menu>
+        <account module="aaho_account" translate="title">
+            <title>Restaurant</title>
+            <sort_order>100</sort_order>
+            <children>
+                <restaurant module="aaho_account" translate="title">
+                    <title>Restaurant Status</title>
+                    <sort_order>1</sort_order>
+                    <action>adminhtml/account/restaurant</action>
+                </restaurant>
+				<account module="aaho_account" translate="title">
+                    <title>Account Details</title>
+                    <sort_order>2</sort_order>
+                    <action>adminhtml/account/account</action>
+                </account>
+            </children>
+        </account>
+    </menu>
+    <acl>
+        <resources>
+            <admin>
+                <children>
+                    <account translate="title" module="aaho_account">
+                        <title>My Controller</title>
+                        <sort_order>-100</sort_order>
+                        <children>
+                            <index translate="title">
+                                <title>Index Action</title>
+                                <sort_order>1</sort_order>
+                            </index>
+                        </children>
+                    </account>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>

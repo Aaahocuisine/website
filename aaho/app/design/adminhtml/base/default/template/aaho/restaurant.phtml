@@ -1,0 +1,43 @@
+<?php
+/**
+ * Aaho Extension
+ *
+ * @category   Aaho
+ * @package    Aaho_Account
+ * @author     Ashok Kumar Mishra <ashokmishra.cpp@gmail.com>
+ */
+$tables = $this->getTables();
+?>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+<div class="Restaurant">
+    <table>
+        <tr>
+            <th>Table</th>
+            <th>Items</th>
+            <th>Price</th>
+        </tr>
+        <?php foreach ($tables as $table): ?>
+        <tr>
+            <td><?php echo $table['table_no'] ?></td>
+            <td><?php echo $table['items'] ?></td>
+            <td><?php echo $table['price'] ?></td>
+        </tr>
+        <?php endforeach; ?>
+    </table>
+</div>

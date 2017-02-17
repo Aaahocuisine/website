@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Aaho_Account>
+            <version>1.0.0</version>
+        </Aaho_Account>
+    </modules>
+    <global>
+        <blocks>
+            <aaho_account>
+                <class>Aaho_Account_Block</class>
+            </aaho_account>
+        </blocks>
+        <models>
+            <aaho_account>
+                <class>Aaho_Account_Model</class>
+                <resourceModel>aaho_account_mysql4</resourceModel>
+            </aaho_account>
+            <aaho_account_mysql4>
+                <class>Aaho_Account_Model_Mysql4</class>
+                <entities>
+                    <restaurant>
+                        <table>aaho_account_restaurant</table>
+                    </restaurant>
+                </entities>
+            </aaho_account_mysql4>
+        </models>
+        <helpers>
+            <aaho_account>
+                <!-- Helper definition needed by Magento -->
+                <class>Mage_Core_Helper</class>
+            </aaho_account>
+        </helpers>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <foo_bar before="Mage_Adminhtml">Aaho_Account_Adminhtml</foo_bar>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+</config>
