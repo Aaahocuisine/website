@@ -2,7 +2,7 @@
 <config>
     <modules>
         <Aaho_Account>
-            <version>1.0.0</version>
+            <version>1.0.1</version>
         </Aaho_Account>
     </modules>
     <global>
@@ -22,6 +22,9 @@
                     <restaurant>
                         <table>aaho_account_restaurant</table>
                     </restaurant>
+                    <order>
+                        <table>aaho_account_order</table>
+                    </order>
                 </entities>
             </aaho_account_mysql4>
         </models>

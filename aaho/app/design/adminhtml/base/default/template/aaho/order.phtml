@@ -1,0 +1,67 @@
+<?php
+/**
+ * Aaho Extension
+ *
+ * @category   Aaho
+ * @package    Aaho_Account
+ * @author     Ashok Kumar Mishra <ashokmishra.cpp@gmail.com>
+ */
+$orders = $this->getOrders();
+?>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+    .date-field {
+        padding-bottom: 10px;
+    }
+</style>
+<?php 
+    date_default_timezone_set('Asia/Kolkata'); 
+    $date = date('Y-m-d'); 
+?>
+<div class="Restaurant">
+    <div id="date_field" class="date-field">
+        <form action="">
+            From Date:<input type="date" name="from_date" value="<?php echo $date; ?>">&nbsp;&nbsp;&nbsp;&nbsp;
+            To Date:<input type="date" name="to_date" value="<?php echo $date; ?>">&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="submit">
+         </form>
+    </div>
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Order No</th>
+            <th>Items</th>
+            <th>Price</th>
+        </tr>
+	<?php $totalPrice = 0; ?>
+        <?php foreach ($orders as $order): ?>
+            <?php $totalPrice += $order['price']; ?>
+            <tr>
+                <td><?php echo $order['date'] ?></td>
+                <td><?php echo $order['order_no'] ?></td>
+                <td><?php echo $order['items'] ?></td>
+                <td><?php echo $order['price'] ?></td>
+            </tr>
+        <?php endforeach; ?>
+	<tr>
+            <td>Total</td>
+            <td></td>
+            <td></td>
+            <td><?php echo $totalPrice ?></td>
+	</tr>
+    </table>
+</div>

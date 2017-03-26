@@ -10,7 +10,7 @@
                     <sort_order>1</sort_order>
                     <action>adminhtml/account/restaurant</action>
                 </restaurant>
-		<account module="aaho_account" translate="title">
+				<account module="aaho_account" translate="title">
                     <title>Account Details</title>
                     <sort_order>2</sort_order>
                     <action>adminhtml/account/account</action>

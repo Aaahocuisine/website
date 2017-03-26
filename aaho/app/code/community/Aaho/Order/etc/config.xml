@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<config>    
+    <modules>
+        <Aaho_Order>
+            <version>0.1.0</version>
+        </Aaho_Order>
+    </modules>
+    <frontend>
+        <routers>
+            <order>
+                <use>standard</use>
+                <args>
+                    <module>Aaho_Order</module>
+                    <frontName>order</frontName>
+                </args>
+            </order>
+        </routers>    
+    </frontend>
+</config> 
