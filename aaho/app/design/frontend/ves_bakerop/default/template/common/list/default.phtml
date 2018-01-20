@@ -25,16 +25,16 @@
                  } 
             ?>
 
-                    <div class="top-buttons">                       
+                    <!--div class="top-buttons">                       
 
                         <div class="action">
                         <?php if($show_addcart): ?>
                             <div class="cart">
                                 <?php if($_product->isSaleable()): ?>
                                     <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="btn button btn-shopping-cart btn-outline" onclick="<?php if($ajax_cart) { ?>addToCart('<?php echo $this->getAddToCartUrl($_product) ?>')<?php } else { ?>setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')<?php } ?>"><span><span><?php echo $this->__('Add to Cart') ?></span></span> </button>
-                                    <?php else: ?>
+                                <?php else: ?>
                                         <p class="availability out-of-stock"><span><?php echo $this->__('Out of stock') ?></span></p>
-                                    <?php endif; ?> 
+                                <?php endif; ?> 
                             </div>
                         <?php endif; ?>
 
@@ -56,9 +56,9 @@
                         
                         </div>
                       
-                    </div>
+                    </div-->
 
-
+                    <button type="button" title="<?php echo $this->__('Add to Cart') ?>" class="btn button btn-shopping-cart btn-outline" onclick="<?php if($ajax_cart) { ?>addToCart('<?php echo $this->getAddToCartUrl($_product) ?>')<?php } else { ?>setLocation('<?php echo $this->getAddToCartUrl($_product) ?>')<?php } ?>"><span><span><?php echo $this->__('Add to Cart') ?></span></span> </button>
                     <div class="image <?php echo $swap_class; ?>">
                         <?php  //Sale Icon ?>
                             <?php 
@@ -156,7 +156,12 @@
 
                             <?php if( $show_title ): ?>
                                 <?php $_productNameStripped = $this->stripTags($_product->getName(), null, true); ?>
-                                <h3 class="product-name name"><a href="<?php echo $_product->getProductUrl() ?>" title="<?php echo $_productNameStripped; ?>"><?php echo $_helper->productAttribute($_product, $_product->getName() , 'name'); ?></a></h3>
+                                <h3 class="product-name name">
+                                    <a title="<?php echo $_productNameStripped; ?>">
+                                        <?php echo $_helper->productAttribute($_product, $_product->getName() , 'name'); ?></br>
+                                        <?php echo $_helper->productAttribute($_product, $_product->getShortDescription() , 'short_description'); ?>
+                                    </a>
+                                </h3>
                             <?php endif; ?>
 
                             <?php echo $this->getReviewsSummaryHtml($_product, true, true)?>
